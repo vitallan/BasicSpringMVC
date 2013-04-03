@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="MyConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t|%C{1}] %p - %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- appender name="FileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/your/path/to/log/log.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t|%C{1}] %p - %m%n" />
+		</layout>
+	</appender -->
+
+	<!-- Project loggers -->
+	<logger name="uol.saca.produtos" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="FileAppender" />
+	</logger>
+	
+	<logger name="uol.saca.produtos.rest" additivity="false">
+		<level value="ERROR" />
+		<appender-ref ref="FileAppender" />
+	</logger>
+	
+	<logger name="uol.apisecurity" additivity="false">
+		<level value="WARN" />
+		<appender-ref ref="FileAppender" />
+	</logger>
+	
+	<logger name="uol.security.api" additivity="false">
+		<level value="WARN" />
+		<appender-ref ref="FileAppender" />
+	</logger>
+	
+	<logger name="uol.gibraltar" additivity="false">
+		<level value="WARN" />
+		<appender-ref ref="FileAppender" />
+	</logger>
+	
+	<!-- Dependencies loggers -->
+	<logger name="org.mortbay">
+		<level value="INFO" />
+	</logger>
+	<logger name="org.springframework" additivity="false">
+		<level value="ERROR" />
+	</logger>
+	<logger name="org">
+		<level value="ERROR" />
+	</logger>
+	<logger name="com">
+		<level value="ERROR" />
+	</logger>
+	
+	<!-- Default -->
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="MyConsoleAppender"/>
+	</root>
+
+</log4j:configuration>
