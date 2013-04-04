@@ -12,7 +12,7 @@ I'm using maven for dependency management.
 Using it
 ========
 
-In the pom.xml there's the plugin for jetty. It'll run under the 8080 port, in the url basic.spring.mvc.com . You must map this to your 127.0.0.1 in /etc/hosts to work, then go to the root of the project and run "mvn jetty:run". Go to your browser and type basic.spring.mvc.com:8080 and you will hit the default controller defined in basic.spring.mvc.controller.BasicController.java
+In the pom.xml there's the plugin for jetty. It'll run under the 8080 port, in the url basic.spring.mvc.com . You must map this to your 127.0.0.1 in your hosts file to work, then go to the root of the project and run "mvn jetty:run". Go to your browser and type basic.spring.mvc.com:8080 and you will hit the default controller defined in basic.spring.mvc.controller.BasicController.java
 
 Customization
 =============
